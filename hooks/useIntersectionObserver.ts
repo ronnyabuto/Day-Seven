@@ -20,6 +20,8 @@ export function useIntersectionObserver(
 
     const observer = new IntersectionObserver(
       ([entry]) => {
+        if (!entry) return
+
         const isElementIntersecting = entry.isIntersecting
         setIsIntersecting(isElementIntersecting)
 
@@ -77,7 +79,7 @@ export function useLazyLoading<T extends HTMLElement = HTMLDivElement>() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry && entry.isIntersecting) {
           setShouldLoad(true)
           observer.unobserve(element)
         }

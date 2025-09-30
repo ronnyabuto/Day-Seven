@@ -37,7 +37,7 @@ export interface BookingState {
   selectedDates: DateRange
   guestInfo: GuestInfo
   selectedHours: number
-  validationErrors: Record<string, string>
+  validationErrors: Record<string, string | undefined>
 }
 
 export interface StayCalculation {

@@ -101,8 +101,8 @@ export function GoogleMap({ className = "" }: GoogleMapProps) {
 
     return () => {
       // Cleanup
-      if (window.initMap) {
-        delete window.initMap
+      if ((window as any).initMap) {
+        delete (window as any).initMap
       }
     }
   }, [])

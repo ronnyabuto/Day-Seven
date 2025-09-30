@@ -72,12 +72,12 @@ class PerformanceMonitor {
 
   private trackINP(callback: (metric: Metric) => void) {
     let maxINP = 0
-    let inpId = `inp-${Date.now()}`
+    const inpId = `inp-${Date.now()}`
 
     const observer = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
         if (entry.entryType === 'event') {
-          const inp = entry.processingStart - entry.startTime
+          const inp = (entry as any).processingStart - entry.startTime
           if (inp > maxINP) {
             maxINP = inp
             callback({

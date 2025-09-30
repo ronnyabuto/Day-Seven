@@ -1,5 +1,5 @@
 interface HeroSectionProps {
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 export function HeroSection({ children }: HeroSectionProps) {

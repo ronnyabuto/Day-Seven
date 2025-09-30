@@ -5,7 +5,7 @@ import type { GuestInfo } from "@/data/types"
 
 interface GuestFormProps {
   guestInfo: GuestInfo
-  validationErrors: Record<string, string>
+  validationErrors: Record<string, string | undefined>
   onInputChange: (field: keyof GuestInfo, value: string) => void
   onInputBlur: (field: keyof GuestInfo, value: string) => void
   onNext: () => void

@@ -19,7 +19,7 @@ export function FadeInUp({
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry && entry.isIntersecting) {
           setTimeout(() => setIsVisible(true), delay * 1000)
           observer.unobserve(entry.target)
         }

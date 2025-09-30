@@ -28,7 +28,7 @@ export function DateSelection({
       <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10 shadow-lg shadow-black/5">
         <Calendar
           mode="range"
-          selected={selectedDates}
+          selected={selectedDates as any}
           onSelect={(range) => onDatesChange(range || {})}
           className="rounded-md border-0 bg-transparent"
           disabled={(date) => date < new Date()}
